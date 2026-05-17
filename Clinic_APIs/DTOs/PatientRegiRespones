@@ -1,0 +1,15 @@
+using System;
+ namespace Clinic_APIs.DTO{
+
+public class PatientRegistrationResponseDTO{
+
+    public int AppointmentId {get; set;}
+    public int DoctorId {get; set;}
+    public int PatientId {get; set;}
+    public string? Notes {get; set;}
+    public DateTime AppointmentDate {get; set;}
+    public AppointmentStatus Status {get; set;}
+
+}
+    
+ }
