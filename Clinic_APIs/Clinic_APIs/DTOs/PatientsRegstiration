@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Clinic_APIs.DTO{
 
-public class PayiantsRegstirationDTO{
+public class PatiantsRegstirationDTO{
 
 [Required]
 public string PatientName {get; set;}
