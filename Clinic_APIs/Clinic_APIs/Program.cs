@@ -1,41 +1,25 @@
-var builder = WebApplication.CreateBuilder(args);
+using Clinic_APIs.Data; //using means "use the namespace of '' so you can see their classes name"
+using Microsoft.EntityFrameworkCore; // labrariy called EFC that has DbContext, DbSet, UseSqlite, migrations, LINQ
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+var builder = WebApplication.CreateBuilder(args); // create obj called bulider that will read appsetting.json
+builder.Services.AddControllers(); // add services to the container, in this case we want to add controllers
+builder.Services.AddDbContext<ClinicDbContext>(options => options.UseSqlite(
+    builder.Configuration.GetConnectionString("DefaultConnection"))); //
 
-var app = builder.Build();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
-// Configure the HTTP request pipeline.
+var app = builder.Build(); // build the app, this will create the pipeline
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+app.UseSwagger();
+app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseHttpsRedirection(); // redirect http to https
+app.UseAuthorization(); // use authorization, this will check if the user is authorized to access the resource
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+app.MapControllers(); // map the controllers to the endpoints, this will allow us to access the controllers
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+app.Run(); // run the app, this will start the server and listen for requests
 
-app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
