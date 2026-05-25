@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Clinic_APIs.DTO{
+namespace Clinic_APIs.DTOs{
 
 public class CreateAppointmentDTO{
 

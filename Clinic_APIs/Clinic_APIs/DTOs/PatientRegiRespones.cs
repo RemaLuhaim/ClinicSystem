@@ -1,5 +1,5 @@
 using System;
- namespace Clinic_APIs.DTO{
+ namespace Clinic_APIs.DTOs{
 
 public class PatientRegistrationResponseDTO{
 
