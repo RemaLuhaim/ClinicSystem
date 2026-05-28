@@ -3,6 +3,8 @@ namespace Clinic_APIs.DTOs{
 
 public class DoctorRegiResponesDTO{
 
+public int DoctorId {get; set;}
+
 public string DoctorName {get; set;}
 
 
