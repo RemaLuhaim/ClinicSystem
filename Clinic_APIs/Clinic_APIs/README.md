@@ -326,5 +326,5 @@ Benefits:
 
 Developed by:
 
-**Rema Aluhaim**
+**Rema Aluhaim - rema.luhaim@gmail.com**
 ASP.NET Core | Full Stack Development | Backend Development
