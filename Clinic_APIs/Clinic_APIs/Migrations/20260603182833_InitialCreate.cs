@@ -49,9 +49,8 @@ namespace Clinic_APIs.Migrations
                 name: "Appointment",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    AppointmentId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    AppointmentId = table.Column<int>(type: "INTEGER", nullable: false),
                     DoctorId = table.Column<int>(type: "INTEGER", nullable: false),
                     PatientId = table.Column<int>(type: "INTEGER", nullable: false),
                     Notes = table.Column<string>(type: "TEXT", nullable: true),
@@ -60,7 +59,7 @@ namespace Clinic_APIs.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Appointment", x => x.Id);
+                    table.PrimaryKey("PK_Appointment", x => x.AppointmentId);
                     table.ForeignKey(
                         name: "FK_Appointment_Doctor_DoctorId",
                         column: x => x.DoctorId,

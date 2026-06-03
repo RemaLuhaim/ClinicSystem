@@ -33,6 +33,7 @@ await _context.SaveChangesAsync();
 
 return new DoctorRegiResponesDTO{// This line creates and returns a new instance of the DoctorRegiResponesDTO class, which is used to encapsulate the response data for a doctor registration operation. The properties of this DTO are being set based on the values from the doctor object that was just created and saved to the database.
 DoctorName = doctor.DoctorName,
+DoctorId = doctor.DoctorId,
 PhoneNumber = doctor.PhoneNumber,
 Email = doctor.Email,
 Specialization = doctor.Specialization,

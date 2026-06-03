@@ -7,9 +7,9 @@ public class CreateAppointmentDTO{
 
 
 [Required]
-public int DoctorID {get; set;}
+public int DoctorId {get; set;}
 [Required]
-public int PatientID {get; set;}
+public int PatientId {get; set;}
 [Required]
 public DateTime AppointmentDate {get; set;}
 [MaxLength(500)]

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace Clinic_APIs.Models{
 
 public class Appointment{
-    public int Id {get; set;}
+   
     public int AppointmentId {get; set;}
     public int DoctorId {get; set;}
     public int PatientId {get; set;}

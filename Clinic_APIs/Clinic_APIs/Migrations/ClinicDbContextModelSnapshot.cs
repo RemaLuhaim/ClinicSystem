@@ -19,15 +19,12 @@ namespace Clinic_APIs.Migrations
 
             modelBuilder.Entity("Clinic_APIs.Models.Appointment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("AppointmentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("AppointmentDate")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("AppointmentId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("DoctorId")
                         .HasColumnType("INTEGER");
@@ -41,7 +38,7 @@ namespace Clinic_APIs.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("AppointmentId");
 
                     b.HasIndex("DoctorId");
 

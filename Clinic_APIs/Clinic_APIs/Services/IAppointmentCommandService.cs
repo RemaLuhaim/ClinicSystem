@@ -8,7 +8,7 @@ public interface IAppointmentCommandService{
 
 Task<AppointmentResponseDTO> CreateAppointment (CreateAppointmentDTO dto); 
 
-Task<AppointmentResponseDTO> CancelAppointment (CreateAppointmentDTO dto); 
+Task<AppointmentResponseDTO> CancelAppointment (int AppointmentId); 
 
 
 }

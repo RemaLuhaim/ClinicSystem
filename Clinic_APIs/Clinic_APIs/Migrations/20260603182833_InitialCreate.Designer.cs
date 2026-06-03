@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Clinic_APIs.Migrations
 {
     [DbContext(typeof(ClinicDbContext))]
-    [Migration("20260525064036_InitialCreate")]
+    [Migration("20260603182833_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -22,15 +22,12 @@ namespace Clinic_APIs.Migrations
 
             modelBuilder.Entity("Clinic_APIs.Models.Appointment", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("AppointmentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("AppointmentDate")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("AppointmentId")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("DoctorId")
                         .HasColumnType("INTEGER");
@@ -44,7 +41,7 @@ namespace Clinic_APIs.Migrations
                     b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("AppointmentId");
 
                     b.HasIndex("DoctorId");
 

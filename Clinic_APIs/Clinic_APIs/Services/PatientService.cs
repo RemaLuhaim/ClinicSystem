@@ -39,6 +39,7 @@ return new PatientRegistrationResponseDTO{ // respones
 
 
 PatientName = patient.PatientName,
+ PatientId = patient.PatientId,
 PhoneNumber = patient.PhoneNumber,
 Email = patient.Email
 
