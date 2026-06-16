@@ -1,12 +1,14 @@
 using Clinic_APIs.DTOs;
-namespace Clinic_APIs.Services{
+namespace Clinic_APIs.Services
+{
 
 
-public interface IDoctorService{
+    public interface IDoctorService
+    {
 
-Task<DoctorRegiResponesDTO> DoctorServices (DoctorRegstirationDTO dto);
- 
+        Task<DoctorRegiResponesDTO> DoctorServices(DoctorRegstirationDTO dto);
 
-}
+
+    }
 
 }

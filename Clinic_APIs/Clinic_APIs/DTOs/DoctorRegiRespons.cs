@@ -1,24 +1,17 @@
 using System;
-namespace Clinic_APIs.DTOs{
 
-public class DoctorRegiResponesDTO{
+namespace Clinic_APIs.DTOs
+{
+    public class DoctorRegiResponesDTO
+    {
+        public int DoctorId { get; set; }
 
-public int DoctorId {get; set;}
+        public string DoctorName { get; set; }
 
-public string DoctorName {get; set;}
+        public string PhoneNumber { get; set; }
 
+        public string Email { get; set; }
 
-public string PhoneNumber {get; set;}
-
-
-public string Email {get; set;}
-
-
-public string Specialization {get; set;}
-
-
-}
-
-
-
+        public string Specialization { get; set; }
+    }
 }
